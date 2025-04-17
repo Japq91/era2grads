@@ -13,6 +13,7 @@ dist/
 *.ipynb_checkpoints/
 # capertas
 tests/
+
 # Entornos virtuales
 venv/
 .env/
