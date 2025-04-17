@@ -4,7 +4,7 @@ Voy a ayudarte a mejorar el README.md y agregar comentarios al notebook de demos
 
 ## README.md mejorado
 
-```markdown
+
 # ERA2GRADS
 
 Herramienta para descargar, procesar y visualizar datos ERA5 en formato NetCDF, optimizados para GrADS.
@@ -24,15 +24,15 @@ Herramienta para descargar, procesar y visualizar datos ERA5 en formato NetCDF, 
 ## 📦 Instalación
 
 1. Clona el repositorio:
-   ```bash
+```bash
    git clone https://github.com/tu-usuario/era2grads.git
    cd era2grads
-   ```
+```
 
 2. Instala las dependencias:
-   ```bash
+```bash
    pip install -e .
-   ```
+```
 
 3. Configura tu API key de CDS (Copernicus Data Store):
    - Crea un archivo `$HOME/.cdsapirc` con tus credenciales
@@ -95,7 +95,7 @@ plotter.plot_contour(
 ```
 
 ## 📚 Documentación avanzada
-Consulta el notebook de demostración [`era2grads_demo.ipynb`](era2grads_demo.ipynb) para ejemplos detallados.
+Consulta el notebook de demostración [`examples/era2grads_demo.ipynb`] para ejemplos detallados.
 
 ## 🤝 Contribuciones
 ```
