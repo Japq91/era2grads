@@ -1,5 +1,5 @@
 # Datos ERA5
-*.nc
+#*.nc
 *.grib
 
 # Python
@@ -11,6 +11,7 @@ build/
 dist/
 *.egg-info/
 *.ipynb_checkpoints/
+
 # capertas
 tests/
 
