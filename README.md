@@ -36,7 +36,7 @@ Herramienta para descargar, procesar y visualizar datos ERA5 en formato NetCDF, 
 
 3. Configura tu API key de CDS (Copernicus Data Store):
    - Crea un archivo `$HOME/.cdsapirc` con tus credenciales
-   - [Instrucciones para obtener credenciales](https://cds.climate.copernicus.eu/api-how-to)
+   - [Instrucciones para obtener credenciales](https://cds.climate.copernicus.eu/user-guide)
 
 ## 🏁 Uso básico
 
