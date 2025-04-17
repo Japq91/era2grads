@@ -63,14 +63,14 @@ surface_downloader.download(
 
 ### Procesamiento y conversión
 ```python
-from era2grads.process.transformer import ERA5Transformer
+from era2grads import NCDFormatter
 
-transformer = ERA5Transformer()
-transformer.process(
-    input_file="datos/viento_niveles.nc",
-    output_file="datos_procesados/viento_optimizado.nc",
-    rename_variables={'u': 'u_wind', 'v': 'v_wind'},
-    scale_factors={'u_wind': 1.0, 'v_wind': 1.0}
+formatter = NCDFormatter()
+formatter.grads_optimize(
+    input_file="datos/viento_500hPa.nc",
+    output_file="datos_grads/viento_grads.nc",
+    rename_dict={'latitude': 'lat', 'longitude': 'lon'},
+    cdo_compression="-f nc4c -z zip_4"
 )
 ```
 
@@ -86,40 +86,47 @@ plotter.plot_contour(
     time_index=0
 )
 ```
+### Procesamiento post-descarga
+  - Renombrado de variables para GrADS (`latitude` → `lat`, `longitude` → `lon`)
+  - Compresión eficiente con CDO (`-f nc4c -z zip_4`)
+  - Manejo de warnings de NetCDF/CDO
+
+### Warnings comunes
+- `cdi warning (cdfScanVarAttr)`: Indica que algunas variables no se encontraron durante la conversión. Verifica:
+  - Los nombres en `rename_dict` coinciden con el NetCDF
+  - El archivo de entrada tiene la estructura ERA5 estándar
 
 ## 📚 Documentación avanzada
-Consulta el notebook de demostración [`examples/era2grads_demo.ipynb`] para ejemplos detallados.
+- Notebook principal: [`examples/era2grads_demo.ipynb`](examples/era2grads_demo.ipynb)
+- Parámetros avanzados de `grads_optimize`:
+  - `cdo_compression`: Opciones de compresión (ej. `-z zip_9` para máxima compresión)
+  - `time_dim`: Nombre personalizado para dimensión temporal
 
 ## 🤝 Contribuciones
 ```
---
+https://chat.deepseek.com
 ```
 
-## 📝 Licencia
-```
---
+## Requisitos
+```bash
+cdo>=2.0.0
+cdsapi>=0.6.0
+xarray>=2023.0
 ```
 
 ## Estructura del proyecto:
-   ```
-   era2grads/
-   ├── __init__.py
-   ├── download/
-   │   ├── __init__.py
-   │   ├── pressure.py
-   │   └── surface.py
-   ├── process/
-   │   ├── __init__.py
-   │   ├── validator.py
-   │   └── transformer.py
-   ├── visualize/
-   │   ├── __init__.py
-   │   └── plotter.py
-   ├── docs/
-   ├── examples/
-   │   └── era2grads_demo.ipynb
-   ├── tests/
-   ├── setup.py
-   └── README.md
-   ```
+```
+📦 era2grads
+├── 📄 init.py
+├── 📄 setup.py
+├── 📁 datos/ # Datos descargados (ignorados por git)
+├── 📁 datos_grads/ # Datos procesados (ignorados por git)
+├── 📁 era2grads/ # Paquete principal
+│ ├── 📄 init.py
+│ └── ... # Módulos principales
+├── 📁 examples/ # Notebooks de demostración
+│ └── era2grads_demo.ipynb
+├── 📁 tests/ # Pruebas unitarias
+└── 📄 .gitignore # Reglas para ignorar archivos
+```
 
