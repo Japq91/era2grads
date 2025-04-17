@@ -11,7 +11,8 @@ build/
 dist/
 *.egg-info/
 *.ipynb_checkpoints/
-
+# capertas
+tests/
 # Entornos virtuales
 venv/
 .env/
