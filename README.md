@@ -18,7 +18,7 @@ Herramienta para descargar, procesar y visualizar datos ERA5 en formato NetCDF, 
 
 1. Clona el repositorio:
 ```bash
-   git clone https://github.com/tu-usuario/era2grads.git
+   git clone https://github.com/Japq91/era2grads.git
    cd era2grads
 ```
 
