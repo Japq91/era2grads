@@ -1,10 +1,3 @@
-# Mejoras para tu proyecto ERA2GRADS
-
-Voy a ayudarte a mejorar el README.md y agregar comentarios al notebook de demostración.
-
-## README.md mejorado
-
-
 # ERA2GRADS
 
 Herramienta para descargar, procesar y visualizar datos ERA5 en formato NetCDF, optimizados para GrADS.
